@@ -196,12 +196,12 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-0a7c4629.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-544524b8.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,7 +212,6 @@
       <img src="images/logo-1e815a84.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
@@ -222,22 +221,28 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introducao" class="toc-h1 toc-link" data-title="Introdução">Introdução</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#autenticacao" class="toc-h1 toc-link" data-title="Autenticação">Autenticação</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#canais-de-atendimento" class="toc-h1 toc-link" data-title="Canais de Atendimento">Canais de Atendimento</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#versao" class="toc-h2 toc-link" data-title="Versão">Versão</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#descricao" class="toc-h2 toc-link" data-title="Descrição">Descrição</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#top-level-design" class="toc-h2 toc-link" data-title="Top Level Design">Top Level Design</a>
+                  </li>
+                  <li>
+                    <a href="#especificacao" class="toc-h2 toc-link" data-title="Especificação">Especificação</a>
+                  </li>
+                  <li>
+                    <a href="#guia-de-implementacao" class="toc-h2 toc-link" data-title="Guia de Implementação">Guia de Implementação</a>
                   </li>
               </ul>
           </li>
@@ -253,13 +258,9 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+        <h1 id='introducao'>Introdução</h1>
+<p>Documentação das API&#39;s de open banking no Brasil.</p>
+<h1 id='autenticacao'>Autenticação</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -289,149 +290,192 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h1 id='canais-de-atendimento'>Canais de Atendimento</h1><h2 id='versao'>Versão</h2>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Comments</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>1.0.0</td>
+<td>MM DD YYYY</td>
+<td>Open Banking Team</td>
+<td>Versão base da aplicação</td>
 </tr>
 </tbody></table>
+<h2 id='descricao'>Descrição</h2>
+<p>Essas especificações incluem todas as informações relevantes sobre os canais de atendimento.
+Esse endpoint retorna os possíveis canais de atendimento eletrônicos bem como suas informações de serviços prestados e formas de acesso.</p>
+
+<p>Um canal de atendimento consiste em:</p>
+
+<ul>
+<li>Brand
+
+<ul>
+<li>Channels
+
+<ul>
+<li>Identification
+
+<ul>
+<li>Type</li>
+<li>ChannelPhone</li>
+<li>ChannelURL</li>
+</ul></li>
+<li>ServiceAndFacility
+
+<ul>
+<li>Services</li>
+<li>Description</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id='top-level-design'>Top Level Design</h2>
+<p><img src="images/tld/TLD_Channels_v1-60c53501.png" alt="" /></p>
+<h2 id='especificacao'>Especificação</h2>
+<p><img src="images/uml/UML_Channels_v1-229f7c53.png" alt="" /></p>
+<h3 id='dicionario-de-dados'>Dicionário de Dados</h3>
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Definição</th>
+<th>Tipo</th>
+<th>Tamanho</th>
+<th>Mandatoriedade</th>
+<th>Formato</th>
+<th>Domínio</th>
+<th>Restrições</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>Tipo de canal de   atendimento</td>
+<td>Enum</td>
+<td></td>
+<td>Mandatório</td>
+<td></td>
+<td><ol><li>internet banking</li><li>mobile banking</li><li>central telefônica banking</li><li>SAC</li><li>ouvidoria</li><li>chat</li></ol></td>
+<td></td>
+</tr>
+<tr>
+<td>ChannelPhone</td>
+<td>Telefone de acesso ao canal</td>
+<td>String</td>
+<td></td>
+<td>Opcional</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ChannelURL</td>
+<td>Endereço eletrônico de acesso   ao canal</td>
+<td>String</td>
+<td></td>
+<td>Opcional</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Services</td>
+<td>Enumeração de serviços -   Sugestão, usar o recurso de bitwise</td>
+<td>Enum</td>
+<td></td>
+<td>Mandatório</td>
+<td></td>
+<td><ol><li>abertura de contas</li><li>recebimentos</li><li>pagamentos e transferências eletrônicas</li><li>recebimentos e pagamentos de qualquer natureza</li><li>operações de crédito</li><li>cartão de crédito</li><li>operações de câmbio</li><li>investimentos</li><li>seguros</li><li>ATM na agência</li></ol></td>
+<td></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Campo de texto livre para   descrever mais sobre os serviços</td>
+<td>String</td>
+<td>2000</td>
+<td>Opcional</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='swagger'>Swagger</h3>
+<p><a href="#autenticacao">Download do arquivo swagger</a></p>
+<h2 id='guia-de-implementacao'>Guia de Implementação</h2>
+<p>/channels</p>
+<h4 id='listar-todos-os-canais-de-atendimento-eletronico'>Listar todos os canais de atendimento eletrônico</h4><h5 id='http-request'>HTTP Request</h5>
+<p><code>GET https://example.com/open-banking/v1/open-data/channels</code></p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">channels</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">channels</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'YOURAUTHTOKEN'</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/open-banking/v1/open-data/channels"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: YOURAUTHTOKEN"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">channels</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">channels</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">channels</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">YOURAUTHTOKEN</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">channels</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">channels</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+</code></pre></div>
+<blockquote>
+<p>O comando acima retorna uma estrutura json como essa:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"brand"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nome do Banco"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"identification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"channels"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"identification"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internet Banking"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"channelPhone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999999999"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"channelURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/channel"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"serviceAndFacility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"services"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"abertura de contas"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"recebimentos"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"pagamentos e transferências eletrônicas"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"recebimentos e pagamentos de qualquer natureza"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"operações de crédito"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"cartão de crédito"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"operações de câmbio"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"investimentos"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"seguros"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"ATM na agência"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canal de atendimento 1"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"identification"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mobile Banking"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"channelURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/channel"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"serviceAndFacility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"services"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"recebimentos"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"pagamentos e transferências eletrônicas"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"recebimentos e pagamentos de qualquer natureza"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"operações de crédito"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"cartão de crédito"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"seguros"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canal de atendimento 2"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Este endpoint lista todos os canais de atendimento eletrônico</p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Para utilizar essa API é necessária a autenticação de "open-data". <a href="#autenticacao">Autenticação</a>
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
@@ -495,7 +539,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
